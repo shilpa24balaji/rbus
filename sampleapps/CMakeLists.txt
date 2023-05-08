@@ -48,6 +48,10 @@ add_executable(rbusTableProvider provider/rbusTableProvider.c provider/utilities
 add_dependencies(rbusTableProvider rbus)
 target_link_libraries(rbusTableProvider rbus)
 
+add_executable(testAliasProvider provider/testAliasProvider.c provider/utilities.c)
+add_dependencies(testAliasProvider rbus)
+target_link_libraries(testAliasProvider rbus)
+
 add_executable(rbusSampleTableProvider provider/rbusSampleTableProvider.c)
 add_dependencies(rbusSampleTableProvider rbus)
 target_link_libraries(rbusSampleTableProvider rbus)
@@ -55,6 +59,10 @@ target_link_libraries(rbusSampleTableProvider rbus)
 add_executable(rbusTableConsumer consumer/rbusTableConsumer.c)
 add_dependencies(rbusTableConsumer rbus)
 target_link_libraries(rbusTableConsumer rbus)
+
+add_executable(testAliasConsumer consumer/testAliasConsumer.c)
+add_dependencies(testAliasConsumer rbus)
+target_link_libraries(testAliasConsumer rbus)
 
 add_executable(rbusEventProvider provider/rbusEventProvider.c)
 add_dependencies(rbusEventProvider rbus)
@@ -132,6 +140,8 @@ install (TARGETS
     rbusTableProvider
     rbusSampleTableProvider
     rbusTableConsumer
+    testAliasProvider
+    testAliasConsumer
     rbusEventProvider
     rbusEventConsumer
     rbusMethodProvider
